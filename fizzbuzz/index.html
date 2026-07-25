@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fizz Buzz</title>
+</head>
+
+<body>
+  <form id="formId" action="">
+    <label>enter a number: </label>
+    <input type="number" required id="userInput" name="number">
+    <button type="submit" id="submitButton">go</button>
+  </form>
+  <div id="numbers"></div>
+
+  <script>
+    const input = document.getElementById("userInput")
+    const form = document.getElementById("formId")
+    const numbersField = document.getElementById("numbers")
+    form.addEventListener("submit", (event) => {
+      event.preventDefault()
+      const data = new FormData(event.target)
+      const num = data.get("number")
+      let counter = 1
+      input.value = ""
+      numbers.innerText = ""
+      while (counter <= num) {
+        if (counter % 3 === 0 && counter % 5 === 0) {
+          numbers.innerText += " FizzBuzz"
+        } else if (counter % 3 === 0) {
+          numbers.innerText += " Fizz"
+        } else if (counter % 5 === 0) {
+          numbers.innerText += " Buzz"
+        } else {
+          numbers.innerText += ` ${counter}`
+        }
+        counter++
+      }
+    })
+  </script>
+</body>
+
+</html>

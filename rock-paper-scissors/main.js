@@ -43,4 +43,14 @@ function playRound(humanChoice, computerChoice) {
   }
 }
 
-playRound(getHumanChoice(), getComputerChoice());
+for (let i = 0; i < 5; i++) {
+  playRound(getHumanChoice(), getComputerChoice());
+}
+
+if (humanScore > computerScore) {
+  console.log("You win the game!");
+} else if (computerScore > humanScore) {
+  console.log("Computer wins the game!");
+} else if (computerScore == humanScore) {
+  console.log("Game ends with a tie");
+}
